@@ -4,6 +4,7 @@ const ref = {
 };
 
 ref.form.addEventListener("submit", onSubmit);
+ref.form.addEventListener("submit", reset);
 
 function onSubmit(event) {
   event.preventDefault();
@@ -18,6 +19,7 @@ function onSubmit(event) {
     return alert` Please,fill up all information before login `;
   }
   const formData = new FormData(event.currentTarget);
+  console.log(formData);
   formData.forEach((value, name) => {
     console.log(name, value);
   });
@@ -26,10 +28,14 @@ function onSubmit(event) {
     userEmail,
     userPassword,
   };
-
-  // console.log(userEmail)
-  // console.log(userPassword)
-
-  console.log(formData);
   console.log(formData2);
+}
+
+function reset(event) {
+  const {
+    elements: { email, password },
+  } = event.currentTarget;
+
+  email.value = "";
+  password.value = "";
 }
