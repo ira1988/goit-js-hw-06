@@ -10,5 +10,7 @@ function onInputChangeGreetingText(event) {
 
   if (inputValue !== "") {
     ref.greetingText.textContent = `${inputValue}`;
+  } else {
+    ref.greetingText.textContent = "Anonymous";
   }
 }

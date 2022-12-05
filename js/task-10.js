@@ -25,15 +25,16 @@ function createBox( ){
 
   const boxMarkup  =[]
   for(let i=1;i<=amount;i+=1){
-  let  width = 30;
+  let  width = 30+i*10;
   const color= getRandomHexColor();
-    boxMarkup.push(`<div style="width:${width}px;height:${width}px;background:${color}"></div>`
+    boxMarkup.push(`<div class=".box__item" style="width:${width}px;height:${width}px;background:${color}"></div>`
 
     )
   }
-  const boxMarkupString=boxMarkup.join(',')
+  const boxMarkupString=boxMarkup.join('')
   console.log(boxMarkupString)
-  ref.boxes.insertAdjacentHTML('beforeend',boxMarkupString)
+  ref.boxes.insertAdjacentHTML('beforeend', boxMarkupString)
+  ref.boxes.classList.add('box-contaiten')
   }
 
 
