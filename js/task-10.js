@@ -42,8 +42,9 @@ function createBox( ){
 ref.btnDelete.addEventListener('click', clearPage)
 
 function clearPage(){
+  ref.boxes.innerHTML = "";
 
-  ref.boxes.innerHTML = "" ;
+  ref.input.value =""
 }
 
 
